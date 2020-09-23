@@ -1,0 +1,46 @@
+COPY
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	FILE *fp1,*fp2;
+	char ch;
+	fp1=fopen(" input.txt","r");
+	fp2=fopen(" output.txt","w");
+	while((ch=fget(fp1))!=EOF)
+	{
+		fputc(ch,fp2);
+	}
+	fclose(fp1);
+  fclose(fp2);
+	printf("copied");
+}
+
+
+
+  REVERSE
+  
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	FILE *fp;
+	int ft ,i=0;
+	fp=fopen("my.txt","r");
+	if(fp=NULL)
+	{
+		print("ERROR");
+		return 0;
+	}
+	fseek(fp,0,SEEK_END);
+	ft=ftell(fp);
+	while(i<ft)
+	{
+		i++;
+		fseek(fp,-i,SEEK_END);
+		printf("%c",fgetc(fp));
+	}
+	fclose(fp);
+	return 0;	
+}
